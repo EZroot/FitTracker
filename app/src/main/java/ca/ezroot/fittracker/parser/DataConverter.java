@@ -18,6 +18,7 @@ import ca.ezroot.fittracker.data.LiftData;
 
 public class DataConverter
 {
+	/* obj to json string */
 	public static String convertToJsonString(LiftData data)
 	{
 		String result = "";
@@ -28,6 +29,8 @@ public class DataConverter
 			dataObj.put("name", data.getName());
 			dataObj.put("reps", data.getReps());
 			dataObj.put("sets",data.getSets());
+			dataObj.put("date",data.getTodaysDate());
+			
 			//Json to string
 			result = dataObj.toString();
 		}
@@ -38,15 +41,17 @@ public class DataConverter
 		return result;
 	}
 	
+	/* java object from json string */
 	public static LiftData convertFromJsonString(String data)
 	{
 		Gson gson = new Gson();
 		
-		LiftData result = new LiftData();
+		LiftData result;
 		result = gson.fromJson(data, LiftData.class);
 		return result;
 	}
 	
+	/* turns datastructure in to json string */
 	public static String convertToJsonStringDatabase(Vector<LiftData> database)
 	{
 		JSONArray dataArray = new JSONArray();
@@ -61,6 +66,8 @@ public class DataConverter
 				dataObj.put("name", database.get(i).getName());
 				dataObj.put("reps", database.get(i).getReps());
 				dataObj.put("sets", database.get(i).getSets());
+				dataObj.put("date",database.get(i).getTodaysDate());
+				
 				//add to array
 				dataArray.put(dataObj);
 			} catch (JSONException e)
@@ -73,9 +80,9 @@ public class DataConverter
 		return result;
 	}
 	
+	/* returns Liftdata database from json string */
 	public static Vector<LiftData> convertFromJsonStringDatabase(String database)
 	{
-		Gson gson = new Gson();
 		JsonParser parser = new JsonParser();
 		JsonArray jsonArray = parser.parse(database).getAsJsonArray();
 		
@@ -87,7 +94,7 @@ public class DataConverter
 			
 			LiftData tmp = new LiftData();
 			tmp.logAll(obj.get("name").getAsString(),obj.get("reps").getAsInt(), obj.get("sets").getAsInt());
-			
+			tmp.setTodaysDate(obj.get("date").getAsString());
 			result.add(tmp);
 		}
 		return result;

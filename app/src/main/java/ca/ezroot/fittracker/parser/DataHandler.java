@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 
 public class DataHandler
 {
+	/* writes json string to HARD-CODED file */
 	public static void write(Context context, String data)
 	{
 		try
@@ -24,6 +25,7 @@ public class DataHandler
 		}
 	}
 	
+	/* reads json string from HARD-CODED file */
 	public static String read(Context context)
 	{
 		String result = "";

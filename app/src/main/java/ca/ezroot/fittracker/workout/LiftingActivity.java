@@ -78,6 +78,10 @@ public class LiftingActivity extends Activity
 		});*/
 	}
 	
+	/* records the form data, processes it, and saves it to text file in json format */
+	/* records name, reps, set = 1 */
+	/* records todays date */
+	/* in statsActivity, when read file, compare all dates and sort accordingly. */
 	private void logData()
 	{
 		//Reset and read database
@@ -96,9 +100,11 @@ public class LiftingActivity extends Activity
 			{
 				if (setText.getText().toString().trim().length() > 0)
 				{
+					//with sets
 					data.logAll(nameText.getText().toString().trim(), Integer.parseInt(repText.getText().toString()), Integer.parseInt(setText.getText().toString()));
 				} else
 				{
+					//default set = 1
 					data.log(nameText.getText().toString().trim(), Integer.parseInt(repText.getText().toString()));
 				}
 				
