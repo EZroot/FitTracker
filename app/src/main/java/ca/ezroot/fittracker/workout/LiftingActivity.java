@@ -1,20 +1,15 @@
 package ca.ezroot.fittracker.workout;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.util.Vector;
 
-import ca.ezroot.fittracker.LogExerciseActivity;
 import ca.ezroot.fittracker.R;
 import ca.ezroot.fittracker.data.LiftData;
 import ca.ezroot.fittracker.parser.DataConverter;

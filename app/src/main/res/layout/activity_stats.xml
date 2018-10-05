@@ -2,13 +2,95 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".statistics.StatsActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="128dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/dailyStatImg"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="15dp"
+
+                        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+                    <TextView
+                        android:id="@+id/workoutname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="23dp"
+
+                        android:gravity="start"
+                        android:text="workout name"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/workoutreps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="45dp"
+
+                        android:gravity="start"
+                        android:text="reps"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/workoutsets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="65dp"
+
+                        android:gravity="start"
+                        android:text="sets"
+                        android:textSize="15dp" />
+
+                    <TextView
+                        android:id="@+id/workoutdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="85dp"
+
+                        android:gravity="start"
+                        android:text="date"
+                        android:textSize="18dp" />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

@@ -20,12 +20,22 @@ public class StatsData
 	-display in a list organized by date.
 	 */
 	
-	Vector<LiftData> workoutDatabase;
+	Vector<LiftData> liftingDatabase;
 	
 	//grab our data
 	public StatsData(Context context)
 	{
-		workoutDatabase = getLiftDatabase(context);
+		liftingDatabase = readLiftDatabase(context);
+	}
+	
+	public Vector<LiftData> getLiftingDatabase()
+	{
+		return this.liftingDatabase;
+	}
+	
+	public int getItemCount()
+	{
+		return this.liftingDatabase.size();
 	}
 	
 	/* display data in front-end format */
@@ -39,16 +49,9 @@ public class StatsData
 		if it slows down from a fucklod of cardviews i can limit the created ones
 		and load in more as it scrolls. depending on the direction
 	 */
-	private Vector<LiftData> sortByDate(Vector<LiftData> database)
-	{
-		Vector<LiftData> result = new Vector<>();
-		//SORT!!!!!!!!!!!!!!!!!!!!!? or group in to multiple data structures
-		//which can be used to display multiple card view data
-		return result;
-	}
 	
 	/* returns json string database to vector data*/
-	private Vector<LiftData> getLiftDatabase(Context context)
+	private Vector<LiftData> readLiftDatabase(Context context)
 	{
 		Vector<LiftData> result;
 		

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import ca.ezroot.fittracker.statistics.StatsActivity;
+import ca.ezroot.fittracker.workout.LogExerciseActivity;
 
 public class MainActivity extends AppCompatActivity
 {
